@@ -1,6 +1,8 @@
+# Oppgave 1, A og B
+
 fun nok_to_euro(nok_amount):
   # Antatt Valutakurs: 1 NOK = 0,084 EURO
-  exchange_rate = 0.084 
+  exchange_rate = 0.084
   nok_amount * exchange_rate # euro er lik nok_to_euro * nok_amount
 end 
 
