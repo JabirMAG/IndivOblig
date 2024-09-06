@@ -9,7 +9,7 @@ euro # Printer ut euro
 
 # Test av valuta under
 
-eurotest = nok_to_euro(1) # valuta forskjellen mellom 1 krone og euro
+eurotest = nok_to_euro(1) # (x) = input for norsk krone som blir omgjort til USD. 
 
 check "riktig valute endring for euro": # Test av Euro endring
   eurotest * (1) is 0.084
@@ -27,7 +27,7 @@ fun nok_to_usd(nok_amount):
   nok_amount * exchange_rate # USD er lik nok_to_usd * nok_amount 
 end 
 
-usd = nok_to_usd(1) # usd er lik nok_to_usd * nok_amount
+usd = nok_to_usd(1) # (x) = input for norsk krone som blir omgjort til USD. 
 usd # Printer ut USD
 
 # Test av valuta under
