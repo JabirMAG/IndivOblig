@@ -1,0 +1,42 @@
+fun nok_to_euro(nok_amount):
+  # Antatt Valutakurs: 1 NOK = 0,084 EURO
+  exchange_rate = 0.084 
+  nok_amount * exchange_rate # euro er lik nok_to_euro * nok_amount
+end 
+
+euro = nok_to_euro(1) # euro er lik nok_to_euro * nok_amount
+euro # Printer ut euro
+
+# Test av valuta under
+
+eurotest = nok_to_euro(1) # valuta forskjellen mellom 1 krone og euro
+
+check "riktig valute endring for euro": # Test av Euro endring
+  eurotest * (1) is 0.084
+  eurotest * (2) is 0.168
+  eurotest * (3) is 0.252
+  eurotest * (4) is 0.336
+end
+
+
+# Norske Krone kurs til United Stated Dollar under
+
+fun nok_to_usd(nok_amount):
+  # Antatt Valutakurs: 1 NOK = 0.093
+  exchange_rate = 0.093
+  nok_amount * exchange_rate # USD er lik nok_to_usd * nok_amount 
+end 
+
+usd = nok_to_usd(1) # usd er lik nok_to_usd * nok_amount
+usd # Printer ut USD
+
+# Test av valuta under
+
+dollartest = nok_to_usd(1) # valuta forskjellen mellom 1 krone og usd
+
+check "riktig valute endring for dollar": # Test av USD endring
+  dollartest * (1) is 0.093
+  dollartest * (2) is 0.186
+  dollartest * (3) is 0.279
+  dollartest * (4) is 0.372
+end
