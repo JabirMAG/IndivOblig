@@ -12,3 +12,27 @@ end
 
 nok_to_valuta(1, "Euro") # Input og printer ut returverdi for Euro
 nok_to_valuta(10, "USD") # Input og printer ut returverdi for USD
+
+
+# Under dette er det test av Valuta
+
+# Dollar Test
+dollartest = nok_to_valuta(1, "USD") # valuta testen mellom 1 krone og usd
+
+check "riktig valute endring for dollar": # Test av USD endring
+  dollartest * (1) is 0.093
+  dollartest * (2) is 0.186
+  dollartest * (3) is 0.279
+  dollartest * (4) is 0.372
+end
+
+
+# Euro Test
+eurotest = nok_to_valuta(1, "Euro") # valuta testen mellom 1 krone og euro
+
+check "riktig valute endring for euro": # Test av Euro endring
+  eurotest * (1) is 0.084
+  eurotest * (2) is 0.168
+  eurotest * (3) is 0.252
+  eurotest * (4) is 0.336
+end
