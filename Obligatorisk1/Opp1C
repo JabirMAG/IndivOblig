@@ -1,0 +1,14 @@
+# Oppgave 1C! Tok sin tid så er stolt av denne :thumbs_up:
+
+fun nok_to_valuta(nok_amount, hvilken_valuta): # Veksling * x kroner * valuta
+  if hvilken_valuta == "Euro": # Hvis vi velger Euro så bruker koden denne
+    nok_amount * 0.084 # Antatt Valutakurs for Euro
+  else if hvilken_valuta == "USD": # Hvis det står ikke Euro så går koden til USD
+    nok_amount * 0.093 # Antatt Valutakurs for USD
+  else: # Hvis ikke så er det ingen gyldig valuta
+    "Ingen gyldig Valuta" # Feilmelding for folk som prøver seg
+  end
+end
+
+nok_to_valuta(1, "Euro") # Input og printer ut returverdi for Euro
+nok_to_valuta(10, "USD") # Input og printer ut returverdi for USD
