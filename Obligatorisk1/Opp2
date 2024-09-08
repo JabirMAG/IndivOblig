@@ -1,0 +1,42 @@
+# Oppgave 2
+
+# Med OL-Farge nederst
+
+scene = empty-scene(300, 200) # Denne lager Bakgrunn for flagget
+
+Under_Circle = overlay-xy(circle(20, "outline", "yellow"), # Under_Circle er da de to sirklene som er nederst
+  45, 0,
+  circle(20, "outline", "green"))
+
+Top_Circle =  -xy(circle(20, "outline", "blue"), # Top_Circle er sirklene på toppen
+  45, 0, 
+  overlay-xy(circle(20, "outline", "black"),
+    45, 0,
+    circle(20, "outline", "red")))
+
+Kombinert_Image = overlay-xy(Under_Circle, -18, -14, Top_Circle) #Denne lager en koordinert overlay for både Undercircle og Top_Circle
+
+OL_Flag = place-image(Kombinert_Image, 130, 100, scene) #Denne plasserer den kombinerte overlay på Scenen
+
+OL_Flag # Denne delen printer ut Scenen
+
+# Monokront OL Flag
+
+scene_Mon = empty-scene(300, 200) # Bakrunn for Flag
+
+Under_Mon = overlay-xy(circle(20, "outline", "black"), # Nederste sirkel
+  45, 0,
+  circle(20, "outline", "black"))
+
+Top_Mon = overlay-xy(circle(20, "outline", "grey"), # Øverste Sirkler
+  45, 0, 
+  overlay-xy(circle(20, "outline", "grey"),
+    45, 0,
+    circle(20, "outline", "grey")))
+
+Kombinert_Image_Mon = overlay-xy(Under_Mon, -18, -14, Top_Mon) # Kombinerer Sirklene
+
+OL_Mon = place-image(Kombinert_Image_Mon, 130, 100, scene_Mon) # Tar den kombinerte sirklene på scenen
+
+OL_Mon # Printer ut OL-flagget
+
