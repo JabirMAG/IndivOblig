@@ -1,4 +1,4 @@
-# Oppgave 1C! Tok sin tid så er stolt av denne :thumbs_up:
+# Oppgave 1C. Tok sin tid så er stolt av denne :thumbs_up:
 
 fun nok_to_valuta(nok_amount, hvilken_valuta): # Veksling * x kroner * valuta
   if hvilken_valuta == "Euro": # Hvis vi velger Euro så bruker koden denne
@@ -20,7 +20,7 @@ nok_to_valuta(10, "USD") # Input og printer ut returverdi for USD
 dollartest = nok_to_valuta(1, "USD") # valuta testen mellom 1 krone og usd
 
 check "riktig valute endring for dollar": # Test av USD endring
-  dollartest * (1) is 0.093
+  dollartest * (1) is 0.093 
   dollartest * (2) is 0.186
   dollartest * (3) is 0.279
   dollartest * (4) is 0.372
