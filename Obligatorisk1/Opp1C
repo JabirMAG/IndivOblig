@@ -1,5 +1,3 @@
-# Oppgave 1C. Tok sin tid så er stolt av denne :thumbs_up:
-
 fun nok_to_valuta(nok_amount, hvilken_valuta): # Veksling * x kroner * valuta
   if hvilken_valuta == "Euro": # Hvis vi velger Euro så bruker koden denne
     nok_amount * 0.084 # Antatt Valutakurs for Euro
@@ -8,31 +6,19 @@ fun nok_to_valuta(nok_amount, hvilken_valuta): # Veksling * x kroner * valuta
   else: # Hvis ikke så er det ingen gyldig valuta
     "Ingen gyldig Valuta" # Feilmelding for folk som prøver seg
   end
+where: # Test av Valuta Endring
+  # Test av USD Endring
+  nok_to_valuta(1, "USD") is 0.093
+  nok_to_valuta(2, "USD") is 0.186
+  nok_to_valuta(3, "USD") is 0.279
+  nok_to_valuta(4, "USD") is 0.372
+  
+  # Test av Euro Endring
+  nok_to_valuta(1, "Euro") is 0.084
+  nok_to_valuta(2, "Euro") is 0.168
+  nok_to_valuta(3, "Euro") is 0.252
+  nok_to_valuta(4, "Euro") is 0.336
 end
 
 nok_to_valuta(1, "Euro") # Input og printer ut returverdi for Euro
-nok_to_valuta(10, "USD") # Input og printer ut returverdi for USD
-
-
-# Under dette er det test av Valuta
-
-# Dollar Test
-dollartest = nok_to_valuta(1, "USD") # valuta testen mellom 1 krone og usd
-
-check "riktig valute endring for dollar": # Test av USD endring
-  dollartest * (1) is 0.093 
-  dollartest * (2) is 0.186
-  dollartest * (3) is 0.279
-  dollartest * (4) is 0.372
-end
-
-
-# Euro Test
-eurotest = nok_to_valuta(1, "Euro") # valuta testen mellom 1 krone og euro
-
-check "riktig valute endring for euro": # Test av Euro endring
-  eurotest * (1) is 0.084
-  eurotest * (2) is 0.168
-  eurotest * (3) is 0.252
-  eurotest * (4) is 0.336
-end
+nok_to_valuta(1, "USD") # Input og printer ut returverdi for USD
