@@ -1,0 +1,72 @@
+include shared-gdrive("dcic-2021", "1wyQZj_L0qqV9Ekgr9au6RX2iqt2Ga8Ep")
+include gdrive-sheets
+include data-source
+ssid = 
+  "1RYN0i4Zx_UETVuYacgaGfnFcv4l9zd9toQTTdkQkj7g"
+event-data = 
+  load-table: ID, Fornavn, Etternavn, Epost, Kjonn, IP, Alder
+    source: load-spreadsheet(ssid).sheet-by-name("o1-oppg3", true)
+  end
+
+# Oppgave 3A
+
+fun filtrer-alder(table):
+  doc: "Denne funksjonen tar opp folk som er mellom 30 og 80 år gammel"
+  filter-with(table, lam(row): (row["Alder"] <= 80) and (row["Alder"] >= 30) end) # Hoveddel av funksjon, filteren.
+end
+
+filtrer-alder(event-data) # Input er hvilken tabell man velger og den gir da tabellen som returverdi
+
+
+
+# Oppgave 3B
+
+
+
+fun navn-og-mail(status):
+  doc: "Denne gir da den eldste eller yngste som returverdi"
+  tabell = block:
+    if status == "gammel": # Hvis man velger "gammel" så får man den eldste personen som returverdi
+      sortertabell = order event-data:
+        Alder descending
+    end
+      sortertabell.row-n(1)
+    else if status == "ung": # Hvis man velger "ung" så får man den yngste personen som returverdi
+      sortertabell = order event-data:
+        Alder ascending
+    end
+    sortertabell.row-n(1)
+  end
+end
+  tabell
+end
+navn-og-mail("ung") # Input er hvilken tabell man velger og den gir da tabellen som returverdi
+
+# Oppgave 3C
+
+fun gjennomsnittsalder(tabell): 
+  doc: "Denne tabellen gir gjennomsnittsalderen på tabellen"
+  median(tabell, "Alder") # Median gir da midtpunktet 
+  where:
+  gjennomsnittsalder(event-data) is 58 # Test blokk
+end
+gjennomsnittsalder(event-data) #Input for tabell og print
+
+
+
+# Oppgave 3D
+
+# Lager en ny kolonne som gir da full navn 
+Ny_column = build-column(event-data, "Fulltnavn", lam(r): r["Fornavn"] + " " + r["Etternavn"] end) # 
+ 
+
+fun bar_chart_people(table):
+  doc: "Denne funksjonen lager bar.chart"
+  bar-chart(
+    table,
+    "Fulltnavn",     # X-axen
+    "Alder"          # Y-axen          
+  )
+end
+ 
+bar_chart_people(Ny_column) #Input for tabell og returverdi
