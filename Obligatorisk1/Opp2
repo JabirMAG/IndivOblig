@@ -45,6 +45,7 @@ OL_Mon = place-image(Kombinert_Image_Mon, 130, 100, scene_Mon) # Tar den kombine
 # Funksjon for å velge flag
 
 fun visflag(versjon):   # Versjon er input og visflag er en konstant
+	doc: "Denne funksjonen lar folk velge om å printe ut farget OL-flagg eller Monokrom flagget"
   if versjon == "farger": # Hvis man skriver "farger" så vekger den ut OL med farge 
     OL_Flag # Navn for farge flagget 
   else if versjon == "Monokrom": # Hvis man skriver "Mnokrom" så velger den uten farge

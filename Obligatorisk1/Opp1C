@@ -1,4 +1,5 @@
 fun nok_to_valuta(nok_amount, hvilken_valuta): # Veksling * x kroner * valuta
+  Doc: "Denne funksjonen lar en person velge å veksle den Norske Kronen til Euro eller USD"
   if hvilken_valuta == "Euro": # Hvis vi velger Euro så bruker koden denne
     nok_amount * 0.084 # Antatt Valutakurs for Euro
   else if hvilken_valuta == "USD": # Hvis det står ikke Euro så går koden til USD
