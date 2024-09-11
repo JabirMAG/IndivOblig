@@ -46,9 +46,9 @@ navn-og-mail("ung") # Input er hvilken tabell man velger og den gir da tabellen 
 
 fun gjennomsnittsalder(tabell): 
   doc: "Denne tabellen gir gjennomsnittsalderen på tabellen"
-  median(tabell, "Alder") # Median gir da midtpunktet 
+  mean(tabell, "Alder") # Mean gir da gjennomsnittet 
   where:
-  gjennomsnittsalder(event-data) is 58 # Test blokk
+  gjennomsnittsalder(event-data) is 55.9  # Test blokk
 end
 gjennomsnittsalder(event-data) #Input for tabell og print
 
