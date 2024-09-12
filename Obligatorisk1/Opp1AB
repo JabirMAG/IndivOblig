@@ -1,6 +1,8 @@
 # Oppgave 1, A og B
 
-# Valuta endring på Euro
+# Nok-to-Euro :: Number -> Number
+# Input skriver tall i nok
+# Output får tall i Euro
 
 fun nok_to_euro(nok_amount):
   doc: "Denne funksjonen endrer på den Norske Kronen til Euro"
@@ -20,7 +22,9 @@ euro # Printer ut euro
 
 
 
-# Norske Krone kurs til United Stated Dollar under
+# Nok-to-USD :: Number -> Number
+# Input skriver tall i nok
+# Output får tall i USD
 
 fun nok_to_usd(nok_amount):
   Doc: "Denne funksjonen endrer den Norske Kronen til USD"

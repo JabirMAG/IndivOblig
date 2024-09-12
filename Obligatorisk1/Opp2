@@ -44,6 +44,12 @@ OL_Mon = place-image(Kombinert_Image_Mon, 130, 100, scene_Mon) # Tar den kombine
 
 # Funksjon for å velge flag
 
+
+
+# vis_flag_versjon :: String -> Image
+# Input skriver valg av versjon
+# Output printer ut enten farget OL_Flag eller Monokrom
+
 fun visflag(versjon):   # Versjon er input og visflag er en konstant
 	doc: "Denne funksjonen lar folk velge om å printe ut farget OL-flagg eller Monokrom flagget"
   if versjon == "farger": # Hvis man skriver "farger" så vekger den ut OL med farge 
