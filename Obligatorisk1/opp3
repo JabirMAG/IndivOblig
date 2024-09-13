@@ -10,6 +10,11 @@ event-data =
 
 # Oppgave 3A
 
+
+# Filtrer Alder :: Number :: Number -> Tabell
+# Input skriver yngst man vil ha og eldst man vil ha
+# Output Printer ut tabell for folk I alder man vil ha
+
 fun filtrer-alder(table):
   doc: "Denne funksjonen tar opp folk som er mellom 30 og 80 år gammel"
   filter-with(table, lam(row): (row["Alder"] <= 80) and (row["Alder"] >= 30) end) # Hoveddel av funksjon, filteren.
@@ -22,6 +27,9 @@ filtrer-alder(event-data) # Input er hvilken tabell man velger og den gir da tab
 # Oppgave 3B
 
 
+# Navn-og-mail :: String -> Tabell
+# Input valg av om man vil ha eldst eller yngst
+# Output Tabell av eldst eller yngst person
 
 fun navn-og-mail(status):
   doc: "Denne gir da den eldste eller yngste som returverdi"
@@ -42,7 +50,15 @@ end
 end
 navn-og-mail("ung") # Input er hvilken tabell man velger og den gir da tabellen som returverdi
 
+
+
 # Oppgave 3C
+
+
+# Gjennomsnittsalder :: string -> Number
+# Input skriver om at vi vil ha gjennomsnitt på Alder
+# Output Gjennomsnittsalder
+
 
 fun gjennomsnittsalder(tabell): 
   doc: "Denne tabellen gir gjennomsnittsalderen på tabellen"
@@ -58,7 +74,11 @@ gjennomsnittsalder(event-data) #Input for tabell og print
 
 # Lager en ny kolonne som gir da full navn 
 Ny_column = build-column(event-data, "Fulltnavn", lam(r): r["Fornavn"] + " " + r["Etternavn"] end) # 
- 
+
+
+# Bar-chart :: String :: String -> Bar-chart 
+# Input er X-aksen og Y-Aksen og hva man vil ha
+# Output er Bar-chart
 
 fun bar_chart_people(table):
   doc: "Denne funksjonen lager bar.chart"
