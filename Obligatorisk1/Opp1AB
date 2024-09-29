@@ -27,7 +27,7 @@ euro # Printer ut euro
 # Output får tall i USD
 
 fun nok_to_usd(nok_amount):
-  Doc: "Denne funksjonen endrer den Norske Kronen til USD"
+  doc: "Denne funksjonen endrer den Norske Kronen til USD"
   # Antatt Valutakurs: 1 NOK = 0.093
   exchange_rate = 0.093
   nok_amount * exchange_rate # USD er lik nok_to_usd * nok_amount 
