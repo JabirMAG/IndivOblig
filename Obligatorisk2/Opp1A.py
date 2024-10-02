@@ -2,7 +2,7 @@
 
 # string_length(liste) :: liste -> Int
 # Input Vi putter inn listen vi vil bruke :: Liste
-# Output :: Funksjonen gir oss hvor mange string det er i listen i hele tall :: Int
+# Output :: Funksjonen gir oss hvor mange string det er i listen :: Int
 def my_str_len(liste): # String_length er funksjonen for å telle listen, (Liste) er input
     siffer = 0
     for string in liste:
