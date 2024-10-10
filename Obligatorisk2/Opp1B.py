@@ -14,6 +14,7 @@ StudentTabell = pd.DataFrame(tabell)
 # Input :: Input er navn på studenten og hvilken liste vi vil bruke
 # Output :: Returverdi er da Navn på studenten og hvilken Gruppe de hører til
 def FinnGr(Stud_navn, Liste):
+    """Funksjonen leter etter gruppen til eleven"""
     return Liste[Liste["name"] == Stud_navn]
 
 print(FinnGr('Abir', StudentTabell))
