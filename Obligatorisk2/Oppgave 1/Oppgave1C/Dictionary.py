@@ -18,6 +18,7 @@ print("Antall seter i RomA etter oppdatering:", rom_dict["RomA"] + 10)
 # Input :: Hvilket Rom man putter inn :: Table
 # Output :: Viser om at rommet har plass :: String
 def rom_filter(rom_navn):
+    """ Funksjonen vil forsikre at man har nok plass """
     if rom_dict[rom_navn] >= 50:
         return f"{rom_navn} har nok plass."
     else:

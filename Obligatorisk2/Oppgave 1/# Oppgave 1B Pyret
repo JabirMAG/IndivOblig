@@ -1,4 +1,4 @@
-# Oppgave 1B Pyret
+# Oppgave 3A Pyret
 
 # Definerer en tabell med studentnavn og grupper
 student = table: name, gruppe
@@ -16,7 +16,7 @@ fun FinnGr(Stud_navn, Liste):
 end
 
 # Test av funksjonen med noen eksempler
-FinnGr("Dabir", student)
+FinnGr("Dabir", student) 
 
 
 

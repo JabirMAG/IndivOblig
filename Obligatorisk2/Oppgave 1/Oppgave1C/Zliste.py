@@ -20,11 +20,10 @@ z_words = all_z_words(Ord)
 print(z_words)  # Output: ['crazy', 'buzz', 'zebra', 'pizza']
 
 # Testblokk
-
 assert all_z_words(["pizza", "zebra", "house", "buzz", "apple", "crazy"]) == ['crazy', 'buzz', 'zebra', 'pizza']
 
 
-# Filter Z bort med filter istedenfor
+# Filter Z bort med filter istedenfor for_loop
 # Input :: Ordliste :: list
 # Output :: Ord med Z :: list
 def z_words(listen):
