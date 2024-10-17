@@ -23,3 +23,8 @@ kgdata_no_meta = kgdata.drop(kgdata.index[724:])
 renset_kb = kgdata_no_meta 
 
 print(renset_kb)
+
+
+
+
+
