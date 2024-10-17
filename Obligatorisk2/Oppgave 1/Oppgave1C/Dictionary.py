@@ -7,10 +7,10 @@ rom_dict = {
 }
 
 # 1. Sjekke hvor mange seter det er i RomA
-print("Antall seter i RomA:", rom_dict["RomA"])
+print("Antall seter i Rommet:", rom_dict["RomA"])
 
 # 2. Sjekke hvor mange seter RomA har, og legge til 10
-print("Antall seter i RomA etter oppdatering:", rom_dict["RomA"] + 10)
+print("Antall seter i Rommet etter oppdatering:", rom_dict["RomA"] + 10)
 
 
 # 3. Sjekke om at det er 50 plasser
