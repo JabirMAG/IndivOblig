@@ -19,41 +19,42 @@ kgdata["kom"] = kgdata['kom'].str.split(" ").apply(lambda x: x[1] if len(x) > 1 
 kgdata_no_meta = kgdata.drop(kgdata.index[724:])
 
 # Filtrer de rensede dataene
-renset_kb = kgdata_no_meta
+# renset_kb = kgdata_no_meta
 
 
 """Lag et diagram, som viser den gjennomsnittlige prosenten for år 2015 - 2023 for
 10 kommuner, som har data for alle årene, og som har den høyeste prosenten av
 barn i barnehagen i ett- og to-årsalderen"""
-
-# Output
-
+# Problemløsningsstrategi
+# 1. Lag en ny tabell med dataene som ikke har tomrom
+# 2. Sorter tabellen sånn at bare top 10 høyeste blir vist fram
+# 3. Lag en diagram med tabellen fra 2.
 
 # Oppgave 2H
-# Input: Navn på Kommunen :: Str
-# Output: diagram av kommune :: Diagram
-# Funksjon for å plotte data for en valgt kommune
-def plot_kommune(kommune):
-    """ Lager en diagram av kommunen vi velger """
-    kommune_data = renset_kb[renset_kb['kom'] == kommune]
-    if kommune_data.empty:
-        print(f"Kommunen '{kommune}' finnes ikke i datasettet.")
-        return
-    
-    # Forbered dataene for plotting
-    år = ['y15', 'y16', 'y17', 'y18', 'y19', 'y20', 'y21', 'y22', 'y23']
-    prosent = kommune_data[år].values.flatten()
+# 1. Fjerner alt NaN med dropNA
+kg_drop = kgdata.dropna()
+# print(kg_drop)
 
-    # Lager diagrammet
-    plt.figure(figsize=(10, 6))
-    plt.plot(år, prosent, marker='o', linestyle='-', color='b')
-    plt.title(f'Prosent av barn i ett- og to-årsalderen i barnehagen for {kommune}')
-    plt.xlabel('År')
-    plt.ylabel('Prosent')
-    plt.grid(True)
-    plt.xticks(ticks=range(len(år)), labels=[f'20{årstall[1:]}' for årstall in år])
-    plt.show()
+# 2. Sorter Tabellen
+# Lag ny kolonne som inneholder maksverdien for hver kommune fra 2015 til 2023
+kg_drop['høyeste_verdi'] = kg_drop[['y15', 'y16', 'y17', 'y18', 'y19', 'y20', 'y21', 'y22', 'y23']].max(axis=1)
 
-# Kall funksjonen med en spesifikk kommune
-plot_kommune("Oslo")  # Erstatt "Oslo" med kommunen du vil plotte
+# Hent topp 10 kommuner basert på høyeste verdi
+kg_høy = kg_drop.nlargest(10, 'høyeste_verdi')
 
+# Dropp 'høyeste_verdi'-kolonnen for å beholde de opprinnelige årene
+kg_høy = kg_høy.drop(columns=['høyeste_verdi'])
+
+# Vis topp 10-tabellen med verdier fra alle år
+print("Topp 10 kommuner basert på høyeste verdi fra 2015-2023:")
+print(kg_høy)
+
+# 3. Lag diagrammet
+kg_høy.set_index('kom').T.plot(kind='bar', figsize=(10, 6))
+plt.title('Topp 10 kommuner basert på høyeste verdi (2015-2023)')
+plt.xlabel('År')
+plt.ylabel('Prosent')
+plt.xticks(rotation=0)
+plt.legend(title='Kommune', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()

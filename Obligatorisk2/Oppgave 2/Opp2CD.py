@@ -29,13 +29,13 @@ renset_kb = kgdata_no_meta
 # Oppgave 2C - Hvilken kommune har høyest andel barn i gjennomsnit fra 2015 til 2023
 renset_kb['gjennomsnitt_høy'] = renset_kb[['y23', 'y22', 'y21', 'y20', 'y19', 'y18', 'y17', 'y16', 'y15']].mean(axis=1, skipna=True)
 
-# Find the highest average
+# finner høyest gjennomsnitt
 høyest_gjennomsnitt = renset_kb['gjennomsnitt_høy'].max()
 
-# Find the kommune(s) with the highest average proportion
+# Gir navn til den sånn at man ikke må skrive mye for det
 kommuner_med_høyest_gjennomsnitt = renset_kb[renset_kb['gjennomsnitt_høy'] == høyest_gjennomsnitt]
 
-# Print the result
+# Printer
 print("Kommunen med høyest gjennomsnittlig andel barn fra 2015 til 2023")
 print(kommuner_med_høyest_gjennomsnitt[['kom', 'gjennomsnitt_høy']])
 
@@ -45,13 +45,13 @@ print(kommuner_med_høyest_gjennomsnitt[['kom', 'gjennomsnitt_høy']])
 # Oppgave 2D - Hvilken kommune har lavest andel barn i gjennomsnit fra 2015 til 2023
 renset_kb['gjennomsnitt_lav'] = renset_kb[['y23', 'y22', 'y21', 'y20', 'y19', 'y18', 'y17', 'y16', 'y15']].mean(axis=1, skipna=True)
 
-# Find the highest average
+# Finner lavest gjennomsnitt
 lavest_gjennomsnitt = renset_kb['gjennomsnitt_lav'].min()
 
-# Find the kommune(s) with the highest average proportion
+# Gir navn til den sånn at man ikke trenger å skrive mye
 kommuner_med_lavest_gjennomsnitt = renset_kb[renset_kb['gjennomsnitt_lav'] == lavest_gjennomsnitt]
 
-# Print the result
+# Printer
 print("Kommunen med lavest gjennomsnittlig andel barn fra 2015 til 2023")
 print(kommuner_med_lavest_gjennomsnitt[['kom', 'gjennomsnitt_lav']])
 

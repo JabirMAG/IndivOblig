@@ -22,7 +22,7 @@ kgdata_no_meta = kgdata.drop(kgdata.index[724:])
 # Vasket data
 renset_kb = kgdata_no_meta 
 
-# print(renset_kb)
+print(renset_kb)
 
 # -----------------------
 
