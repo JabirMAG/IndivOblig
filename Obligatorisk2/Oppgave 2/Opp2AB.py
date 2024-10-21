@@ -13,7 +13,7 @@ for coln in ['y15','y16','y17','y18','y19','y20','y21','y22','y23']:
 
 kgdata.loc[724:779, 'kom'] = "NaN"
 
-# Filtrerer ut kun navn på kommunbe fra kom feltet og setter kom lik denne verdien
+# Filtrerer ut kun navn på kommune fra kom feltet og setter kom lik denne verdien
 kgdata["kom"] = kgdata['kom'].str.split(" ").apply(lambda x: x[1] if len(x) > 1 else "")
 
 # Dette må gjøres for å unngå ikke relevante felt i vid tabell
