@@ -20,7 +20,8 @@ z_words = all_z_words(Ord)
 print(z_words)  # Output: ['crazy', 'buzz', 'zebra', 'pizza']
 
 # Testblokk
-assert all_z_words(["pizza", "zebra", "house", "buzz", "apple", "crazy"]) == ['crazy', 'buzz', 'zebra', 'pizza']
+def test_all_z_words():
+    assert all_z_words(["pizza", "zebra", "house", "buzz", "apple", "crazy"]) == ['crazy', 'buzz', 'zebra', 'pizza']
 
 
 # Filter Z bort med filter istedenfor for_loop
@@ -34,4 +35,5 @@ def z_words(listen):
 Z_Liste = ["Zer", "Zyntanell", "Dantallian", "Jabir", "Zan"]
 print(z_words(Z_Liste))
 
-assert z_words(["Zer", "Zyntanell", "Dantallian", "Jabir", "Zan"]) == ['Zer', 'Zyntanell', 'Zan']
+def test_z_words():
+    assert z_words(["Zer", "Zyntanell", "Dantallian", "Jabir", "Zan"]) == ['Zer', 'Zyntanell', 'Zan']
